@@ -1,0 +1,12 @@
+atomicwrites==1.2.1
+attrs==18.2.0
+deap==1.2.2
+more-itertools==5.0.0
+Numberjack==1.2.0
+numpy==1.15.4
+pluggy==0.8.0
+py==1.7.0
+pytest==4.0.2
+six==1.12.0
+solidpy==0.1
+taskpacker==0.1.1
