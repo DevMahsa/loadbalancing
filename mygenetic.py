@@ -108,16 +108,20 @@ def evolve(pop, target, retain=0.2, random_select=0.05, mutate=0.01):
     parents.extend(children)
     return parents
 
-target = 371
-p_count = 100
-i_length = 5
-i_min = 0
-i_max = 100
-p = population(p_count, i_length, i_min, i_max)
-fitness_history = [grade(p, target),]
-for i in xrange(100):
-    p = evolve(p, target)
-    fitness_history.append(grade(p, target))
-    for datum in fitness_history:
-        print(datum)
+def main():
 
+    target = 371
+    p_count = 100
+    i_length = 5
+    i_min = 0
+    i_max = 100
+    p = population(p_count, i_length, i_min, i_max)
+    fitness_history = [grade(p, target),]
+    for i in xrange(100):
+        p = evolve(p, target)
+        fitness_history.append(grade(p, target))
+        for datum in fitness_history:
+            print(datum)
+
+if __name__ == "__main__":
+    main()
