@@ -6,6 +6,7 @@ dill==0.2.8.2
 genetic==0.1.dev3
 kiwisolver==1.0.1
 matplotlib==3.0.2
+memetic==1.0.4
 more-itertools==5.0.0
 multiprocess==0.70.6.1
 Numberjack==1.2.0
@@ -23,3 +24,4 @@ six==1.12.0
 solidpy==0.1
 taskpacker==0.1.1
 tqdm==4.28.1
+tzlocal==1.5.1
