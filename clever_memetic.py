@@ -112,8 +112,8 @@ def search(max_gens, search_space, pop_size, p_cross, p_mut, max_local_gens, p_l
         children = reproduce(selected, pop_size, p_cross, p_mut)
         pop = create_populations(bits_per_param, children, max_local_gens, p_mut, pop, search_space, p_local)
         pop.sort(key=lambda x: x['fitness'])
-        if pop[0]['fitness'] > best['fitness']:
-            best = pop[0]
+        if pop[i]['fitness'] <= best['fitness']:
+            best = pop[i]
         print(" > gen %d, best: fitness, best: bitstring: %s, %s" % (gen, best['fitness'], best['bitstring']))
 
     return best
