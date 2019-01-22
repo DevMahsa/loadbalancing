@@ -1,6 +1,5 @@
 from numpy.core.tests.test_mem_overlap import xrange
 from random import randint
-from random import sample
 
 
 def iif(condition, true_part, false_part):
@@ -66,7 +65,7 @@ def search(max_gens, num_bits, pop_size, p_crossover, p_mutation):
     for c in population:
         c['fitness'] = one_max(c['bitstring'])
     population.sort(key=lambda x: x['fitness'])
-    best = population[0]
+    best = population[i]
     for gen in xrange(max_gens):
         selected = [binary_tournament(population) for i in xrange(0, pop_size)]
         children = reproduce(selected, pop_size, p_crossover, p_mutation)
@@ -76,7 +75,7 @@ def search(max_gens, num_bits, pop_size, p_crossover, p_mutation):
         if children[0]['fitness'] > best['fitness']:
             best = children[0]
         population = children
-        print(" > gen %d, best: %d, %s" % (gen, best['fitness'], best['bitstring']))
+        print(" > gen %d, best: %s, %s" % (gen, best['fitness'], best['bitstring']))
         if best['fitness'] == num_bits:
             break
     return best
@@ -92,7 +91,7 @@ def main():
     p_mutation = 1.0 / num_bits
     # execute the algorithm
     best = search(max_gens, num_bits, pop_size, p_crossover, p_mutation)
-    print("done! Solution: f=%f, s=%s" % (best['fitness'], str(best['bitstring'])))
+    print("done! Solution: f=%s, s=%s" % (best['fitness'], str(best['bitstring'])))
 
 
 if __name__ == "__main__":
